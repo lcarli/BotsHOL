@@ -228,3 +228,21 @@ If you prefer, you can use this javascript to embed collapsible window.
     BotData botData = await botState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
     myUserData = botData.GetProperty<MyUserData>("UserData");.. do something ...;
     ```
+
+5. To handling concurrency, just use Try/Catch.
+
+    ```
+    try
+    {
+        // get the user data object
+        BotData userData = await botState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+        // modify it...
+        userData.Data = ...modify...;
+        // save it
+        await botState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
+    }
+    catch (HttpOperationException err)
+    {
+        // handle precondition failed error if someone else has modified your object
+    }
+    ```
