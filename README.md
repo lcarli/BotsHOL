@@ -12,6 +12,8 @@ In these demos, you will see how to:
 2. [Create a webapp on Azure to host your bot and how to deploy it.](#Demo2)
 3. [Register your bot](#Demo3)
 4. [Testing and publishing your bot](#Demo4)
+5. [Embedding a webchat to a website](#Demo5)
+6. [Connecting your bot to a channel - Facebook](#Demo6)
 
 <a name="setup"></a>
 ### Setup and Configuration ###
