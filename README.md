@@ -8,10 +8,10 @@ This is a set of demos showing how to interact with [Microsft Bot Framework](htt
 ### Goals ###
 In these demos, you will see how to:
 
-1. [Create your first bot using Visual Studio and Bot Framework Template](Demo1)
-2. [Create a webapp on Azure to host your bot and how to deploy it.](Demo2)
-3. [Register your bot](Demo3)
-4. [Testing and publishing your bot](Demo4)
+1. [Create your first bot using Visual Studio and Bot Framework Template](#Demo1)
+2. [Create a webapp on Azure to host your bot and how to deploy it.](#Demo2)
+3. [Register your bot](#Demo3)
+4. [Testing and publishing your bot](#Demo4)
 
 <a name="setup"></a>
 ### Setup and Configuration ###
