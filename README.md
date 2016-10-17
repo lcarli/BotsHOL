@@ -8,9 +8,10 @@ This is a set of demos showing how to interact with [Microsft Bot Framework](htt
 ### Goals ###
 In these demos, you will see how to:
 
-1. Create your first bot using Visual Studio and [Bot Framework Template](http://aka.ms/bf-bc-vstemplate)
-2. Create a webapp on Azure to host your bot and how to deploy it.
-3. Register your bot and publish it.
+1. [Create your first bot using Visual Studio and Bot Framework Template](Demo1)
+2. [Create a webapp on Azure to host your bot and how to deploy it.](Demo2)
+3. [Register your bot](Demo3)
+4. [Testing and publishing your bot](Demo4)
 
 <a name="setup"></a>
 ### Setup and Configuration ###
@@ -90,3 +91,30 @@ Follow these steps to setup your environment for the demo.
     * **Default Conversation Language**: The default language to use for new users.(in ISO 639-1 format)
 
 6.  Accept Privacy statement, Terms of use, and Code of conduct. and click _Register_
+
+<a name="Demo4"></a>
+## Demo 4) Testing your bot
+
+1. In your bot project at Visual Studio, run it.
+
+    > **Note** - it will open a port 3978 or 3979.
+
+2. Copy the Url
+
+3. Open the Bot Framework Channel Emulator
+
+4. At Bot url, paste the url that your previously copied.
+
+5. Copy and paste the Microsoft App ID and Password
+
+    > **Note** - If you have not registered your bot yet, just leave those fields blank.
+
+6. The emulator url will be _http://localhost:9000/_.
+
+    > **Note** - If you have problems here with Ngrok, just read [here](https://docs.botframework.com/en-us/tools/bot-framework-emulator/#navtitle) how to solve.
+
+7. Now you can send messages to and receive from your bot.
+
+8. In case that your publish your bot, just change the url of your bot.
+
+> **Speaking Points:** Explain about publish and test the endpoint from Bot Framework Portal.
