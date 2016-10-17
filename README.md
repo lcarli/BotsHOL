@@ -62,7 +62,7 @@ Follow these steps to setup your environment for the demo.
 
 2. Click sign in at the top right
 
-> Note: If you already logged in, you can skip this step.
+>>> Note: If you already logged in, you can skip this step.
 
 3. Log with you LiveID (outlook, hotmail, live, msn, etc.)
 
