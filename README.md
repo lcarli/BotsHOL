@@ -212,7 +212,7 @@ If you prefer, you can use this javascript to embed collapsible window.
 
 > **Speaking Points:** Explain about Get/Set complex data
 
-    >- 
+* Get
 
     ```
     BotState botState = new BotState(stateClient);
@@ -221,7 +221,7 @@ If you prefer, you can use this javascript to embed collapsible window.
     BotData response = await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, botData);
     ```
 
-    >-
+* Set
 
     ```
     MyUserData addedUserData = new MyUserData();
