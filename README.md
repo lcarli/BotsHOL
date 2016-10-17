@@ -28,6 +28,7 @@ Follow these steps to setup your environment for the demo.
 > **Speaking Points:** Explaint this project it is a WebAPI. It is build using ASP.NET.
 * 
     >   Take time to explain the basic methods such as POST (receive message)
+* 
     >   Also explain about libraries:
        
  * **POST** - The method receive a message from the channel where the client was chating
@@ -44,6 +45,8 @@ Follow these steps to setup your environment for the demo.
 3. Enter a unique name in the URL field and click the Create button. This will be the url of your bot.
 
 > **Speaking Points:** While the site is being created, explain that Azure is provisioning a new Web App for you with supporting services, monitoring, support for continuous deployment, etc.
+
+>
 
 > Note: This generally takes 30 - 60 seconds.
 
