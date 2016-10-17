@@ -140,12 +140,34 @@ Follow these steps to setup your environment for the demo.
     - The call will return a token good for one conversation. If you want to start a new conversation, you must generate a new token.
     - Change the “s=” parameter in your iframe embed to “t=”. The “t=” form works with tokens and automatically renews them before they expire.
 
-    * **NOTE**: Note, the above secret is a sample and will not work. Use your own secret.
-
 ```
 <iframe src="https://webchat.botframework.com/embed/YOUR_BOT_ID?t=YOUR_TOKEN_HERE"></iframe>
+```
+
+7. Now, go back to your bot project at Visual Studio, and click **_default.htm_**
+8. Delete all lines inside _body section_ and replace using your iframe webchat.
+
+```
+**Note**: you can style your bot using:
+
+<iframe style="height:480px; width:402px" src="... SEE ABOVE ..."></iframe>
+```
+
+```
+If you prefer, you can use this javascript to render fullscreen.
+
+
 ```
 
 
 <a name="Demo6"></a>
 ## Demo 6) Connecting to Facebook Messenger
+
+1. To configure a channel, go back to the [Bot Framework portal](https://www.botframework.com). Sign in, select your Bot, and go to the channels panel.
+    ![](connector-getstarted-configure-channels.png)
+2. Pick the channel you wish to configure, and click add. You'll be taken to a page of instructions for registering a Bot. In the end in most cases you're configuring your credentials as a developer on the target service, registering your app, and getting a set of Oauth keys that Microsoft Bot Framework can use on your behalf.
+    ![](connector_channel_config_facebook.png)
+3. Once you've gone through the steps here, return to the channel page on the dev portal, click the checkbox for the channel you chose (if you haven't already), and hit "save changes".
+4. That's the end of configuration - your Bot is ready for your users. They will have their own steps to follow to give the Bot permission to participate in their group/channel or get connection details like the SMS phone number or e-mail. They can do this in the Bot Directory page for your Bot. The link to this is at the top of the Bot Details page in the dev portal.
+
+> **Note"": You can follow those steps to add how many channels you want.
