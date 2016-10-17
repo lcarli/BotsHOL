@@ -191,16 +191,19 @@ If you prefer, you can use this javascript to embed collapsible window.
 
 1. Open your bot project.
 2. Inside the POST method, create a new instance of _StateClient_
+
     ```
     StateClient stateClient = activity.GetStateClient();
     ```
 3. To save context of the conversation, set data. In this example, a typed data.
+
     ```
     BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
     userData.SetProperty<bool>("SentGreeting", true);
     await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
     ```
 4. To retrive context of the conversation, get data. In this example, a typed data.
+
     ```
     BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
     if (userData.GetProperty<bool>("SentGreeting"))
@@ -208,7 +211,9 @@ If you prefer, you can use this javascript to embed collapsible window.
     ```
 
 > **Speaking Points:** Explain about Get/Set complex data
-    * 
+
+    >- 
+
     ```
     BotState botState = new BotState(stateClient);
     BotData botData = new BotData(eTag: "*");
@@ -216,7 +221,8 @@ If you prefer, you can use this javascript to embed collapsible window.
     BotData response = await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, botData);
     ```
 
-    * 
+    >-
+
     ```
     MyUserData addedUserData = new MyUserData();
     BotData botData = await botState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
