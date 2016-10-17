@@ -42,13 +42,13 @@ Follow these steps to setup your environment for the demo.
 
 3. Enter a unique name in the URL field and click the Create button. This will be the url of your bot.
 
-> **Speaking Points:** While the site is being created, explain that Azure is provisioning a new Web App for you with supporting services, monitoring, support for continuous deployment, etc.
+    > **Speaking Points:** While the site is being created, explain that Azure is provisioning a new Web App for you with supporting services, monitoring, support for continuous deployment, etc.
 
->- Note: This generally takes 30 - 60 seconds.
+    >- Note: This generally takes 30 - 60 seconds.
 
 4. When the site comes up, scroll through the various features (Monitoring, Usage, Operations, Deployment, Networking) explaining that these are all live and have been provisioned with the Web App. You can click on the _settings_ option to bring up the _settings_ blade.
 
-> Note: If these tiles are not visible, you can add them by clicking on 'Add tiles' button and add Deployment, Operations, Usage etc.
+    > Note: If these tiles are not visible, you can add them by clicking on 'Add tiles' button and add Deployment, Operations, Usage etc.
 
 5. Click on the Browse button. When the default landing page loads, point out that the page illustrates the different options for publishing to the new site, including Git, FTP, Visual Studio, etc.
 
@@ -62,7 +62,7 @@ Follow these steps to setup your environment for the demo.
 
 2. Click sign in at the top right
 
->>> Note: If you already logged in, you can skip this step.
+    > Note: If you already logged in, you can skip this step.
 
 3. Log with you LiveID (outlook, hotmail, live, msn, etc.)
 
