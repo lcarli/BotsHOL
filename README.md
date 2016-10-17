@@ -118,3 +118,29 @@ Follow these steps to setup your environment for the demo.
 8. In case that your publish your bot, just change the url of your bot.
 
 > **Speaking Points:** Explain about publish and test the endpoint from Bot Framework Portal.
+
+
+<a name="Demo5"></a>
+## Demo 5) Using WebChat into your website or as your bot homepage
+
+1. Go to [your bots](https://dev.botframework.com/#/bots)
+2. Click on your bot
+3. Look for “Web Chat” in the Channels section
+    ![](images/chatwidget-channel.png)
+4. Click on Edit for Web chat and press Generate Web Chat Secret
+    ![](images/chatwidget-token.PNG)
+5. Copy the generated secret and embed tag and press “I’m done configuring Web Chat”
+6. Replace _YOUR_SECRET_HERE_ with the embed secret from the same page.
+
+> **Speaking Points:** Using this method you're exposing your bot secret. To do this more safety, generate a token:
+    - Issue a server-to-server GET request to “https://webchat.botframework.com/api/tokens” and pass your web chat secret as the Authorization header.
+    - The Authorization header uses the “BotConnector” scheme and includes your secret. (This auth scheme may also be used with a token but for now we’re using our secret to generate a token.) See example below.
+    - The call will return a token good for one conversation. If you want to start a new conversation, you must generate a new token.
+    - Change the “s=” parameter in your iframe embed to “t=”. The “t=” form works with tokens and automatically renews them before they expire.
+
+    **NOTE**: Note, the above secret is a sample and will not work. Use your own secret.
+        '''<iframe src="https://webchat.botframework.com/embed/YOUR_BOT_ID?t=YOUR_TOKEN_HERE"></iframe>'''
+
+
+<a name="Demo6"></a>
+## Demo 6) Connecting to Facebook Messenger
