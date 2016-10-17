@@ -164,9 +164,9 @@ If you prefer, you can use this javascript to render fullscreen.
 ## Demo 6) Connecting to Facebook Messenger
 
 1. To configure a channel, go back to the [Bot Framework portal](https://www.botframework.com). Sign in, select your Bot, and go to the channels panel.
-    ![](connector-getstarted-configure-channels.png)
+    ![](images/connector-getstarted-configure-channels.png)
 2. Pick the channel you wish to configure, and click add. You'll be taken to a page of instructions for registering a Bot. In the end in most cases you're configuring your credentials as a developer on the target service, registering your app, and getting a set of Oauth keys that Microsoft Bot Framework can use on your behalf.
-    ![](connector_channel_config_facebook.png)
+    ![](images/connector_channel_config_facebook.png)
 3. Once you've gone through the steps here, return to the channel page on the dev portal, click the checkbox for the channel you chose (if you haven't already), and hit "save changes".
 4. That's the end of configuration - your Bot is ready for your users. They will have their own steps to follow to give the Bot permission to participate in their group/channel or get connection details like the SMS phone number or e-mail. They can do this in the Bot Directory page for your Bot. The link to this is at the top of the Bot Details page in the dev portal.
 
