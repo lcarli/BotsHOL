@@ -23,9 +23,10 @@ Follow these steps to setup your environment for the demo.
 ## Demo 1) Ceating your first bot using Visual Studio ##
 
 1. Open Visual Studio 2015
-2. Create a new project and click and Bot Framework Template
+2. Create a new project choose Bot Framework Template and click on it.
 
 > **Speaking Points:** Explaint this project it is a WebAPI. It is build using ASP.NET.
+* 
     >   Take time to explain the basic methods such as POST (receive message)
     >   Also explain about libraries:
        
@@ -35,3 +36,25 @@ Follow these steps to setup your environment for the demo.
 
 <a name="Demo2"></a>
 ## Demo 2) Ceating a webapp to host your bot
+
+1. Browse to the [Azure Portal](https://portal.azure.com)
+
+2. Click New / Web + Mobile / Web App.
+
+3. Enter a unique name in the URL field and click the Create button. This will be the url of your bot.
+
+> **Speaking Points:** While the site is being created, explain that Azure is provisioning a new Web App for you with supporting services, monitoring, support for continuous deployment, etc.
+
+> Note: This generally takes 30 - 60 seconds.
+
+4. When the site comes up, scroll through the various features (Monitoring, Usage, Operations, Deployment, Networking) explaining that these are all live and have been provisioned with the Web App. You can click on the _settings_ option to bring up the _settings_ blade.
+
+> Note: If these tiles are not visible, you can add them by clicking on 'Add tiles' button and add Deployment, Operations, Usage etc.
+
+5. Click on the Browse button. When the default landing page loads, point out that the page illustrates the different options for publishing to the new site, including Git, FTP, Visual Studio, etc.
+
+6.  Back in the portal, Under 'General' option select 'Application settings'. Show that .NET, PHP, Python and Java are all show.
+
+
+<a name="Demo3"></a>
+## Demo 2) Registering your bot at Bot Framework
