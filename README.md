@@ -154,9 +154,21 @@ Follow these steps to setup your environment for the demo.
 ```
 
 ```
-If you prefer, you can use this javascript to render fullscreen.
+If you prefer, you can use this javascript to embed collapsible window.
 
+(function () {
+    var div = document.createElement("div");
+    document.getElementsByTagName('body')[0].appendChild(div);
+    div.outerHTML = "<div id='BotDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000'><div id='BotTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='600px' src='BOTFRAMEWORK_WEB_EMBED_URL'></iframe></div>"; 
 
+    document.querySelector('body').addEventListener('click', function (e) {
+        e.target.matches = e.target.matches || e.target.msMatchesSelector;
+        if (e.target.matches('#BotTitleBar')) { 
+            var botDiv = document.querySelector('#BotDiv'); 
+            botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
+        };
+    });
+}());
 ```
 
 
