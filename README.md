@@ -56,7 +56,7 @@ Follow these steps to setup your environment for the demo.
 
 
 <a name="Demo3"></a>
-## Demo 2) Registering your bot at Bot Framework Portal
+## Demo 3) Registering your bot at Bot Framework Portal
 
 1. Browse to the [Bot Framework Portal](https://dev.botframework.com/)
 
@@ -64,16 +64,27 @@ Follow these steps to setup your environment for the demo.
 
 > Note: If you already logged in, you can skip this step.
 
-3. Enter a unique name in the URL field and click the Create button. This will be the url of your bot.
+3. Log with you LiveID (outlook, hotmail, live, msn, etc.)
 
-> **Speaking Points:** While the site is being created, explain that Azure is provisioning a new Web App for you with supporting services, monitoring, support for continuous deployment, etc.
+4. Click in *Register a bot* to register a new bot
 
->- Note: This generally takes 30 - 60 seconds.
+5. fulfill all data about your bot.
+* Name: Displayed in Bot Directory. 35 character limit.
+* Bot Handle: Used in the URL for your bot. *Alphanumeric and underscore only*. Cannot be changed once registered.
+* Description: First 46 characters displayed on your bot card in Bot Directory. Full description displayed in bot details.
 
-4. When the site comes up, scroll through the various features (Monitoring, Usage, Operations, Deployment, Networking) explaining that these are all live and have been provisioned with the Web App. You can click on the _settings_ option to bring up the _settings_ blade.
+* Messaging endpoint: HTTPS Rest endpoint that the bot implements to send and receive messages.
+- It will be your webapp previously created plus the route */api/messages/*
+* Microsoft App ID: Get your Microsoft App ID and password from the Microsoft Application registration portal. Paste the password in your bot configuration file.
+> *Note* - You have only one chance to see your Microsoft App Password. Save it in a safety place.
 
-> Note: If these tiles are not visible, you can add them by clicking on 'Add tiles' button and add Deployment, Operations, Usage etc.
+* Publisher name - Your name or your company name
+* Publisher Email - Your Email or your commpany email
+* Privacy statement - If you have one, paste url here. If don't, you can use that -> http://go.microsoft.com/fwlink/?linkid=521839
+* Terms of Use - If you have one, paste url here. If don't, you can use tour website url
+* Bot website - Url of your bot previously created
+* Hashtags - Comma delimited.
+* Languages - ISO 639-1 format, comma delimited.
+* Default Conversation Language - The default language to use for new users.(in ISO 639-1 format)
 
-5. Click on the Browse button. When the default landing page loads, point out that the page illustrates the different options for publishing to the new site, including Git, FTP, Visual Studio, etc.
-
-6.  Back in the portal, Under 'General' option select 'Application settings'. Show that .NET, PHP, Python and Java are all show.
+6.  Accept Privacy statement, Terms of use, and Code of conduct. and click _Register_
