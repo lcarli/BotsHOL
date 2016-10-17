@@ -31,13 +31,56 @@ Follow these steps to setup your environment for the demo.
 1. Open Visual Studio 2015
 2. Create a new project choose Bot Framework Template and click on it.
 
-> **Speaking Points:** Explain this project it is a WebAPI. It is build using ASP.NET.
->- Take time to explain the basic methods such as POST (receive message)
->- Also explain about libraries:
-       
- * **POST** - The method receive a message from the channel where the client was sending messages
-        * **Tip:** This method already cames with a countCaracters method and a response. Explore it with your audience.
+    > **Speaking Points:** Explain this project it is a WebAPI. It is build using ASP.NET.
+    >- Take time to explain the basic methods such as POST (receive message)
+    >- Also explain about libraries:
+        
+    * **POST** - The method receive a message from the channel where the client was sending messages
+            * **Tip:** This method already cames with a countCaracters method and a response. Explore it with your audience.
 
+4. Let's work with greetings! A simple way to do that it is create a list with greeting words. You can copy here:
+
+    ```
+    private List<string> greetingsWord = new List<string>()
+    {
+        "Hi",
+        "Hello",
+        "How are you?",
+        "What's up?"
+    };
+    ```
+
+5. A best pratice in this case is create a method to verify words and return boolean if contains any word. Follow this example:
+
+    ```
+    private bool Contain(List<string> list, string msg)
+    {
+        foreach (string word in list)
+        {
+            if (msg.ToLower().Contains(word.ToLower())) return true;
+        }
+        return false;
+    }
+    ```
+
+6. In the POST method, verify if the client sent greeting words and response properly. To do that, just use _foreach_ in your list of word and verify if _activity.text_ contains any word.
+
+    ```
+    if (Contain(greetingsWord, activity.Text))
+    {
+        Activity reply = activity.CreateReply("Hello, stranger!");
+        await connector.Conversations.ReplyToActivityAsync(reply);
+    }
+    else
+    {
+        // calculate something for us to return
+        int length = (activity.Text ?? string.Empty).Length;
+
+        // return our reply to the user
+        Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters");
+        await connector.Conversations.ReplyToActivityAsync(reply);
+    }
+    ```
 
 <a name="Demo2"></a>
 ## Demo 2) Creating a webapp to host your bot
@@ -202,7 +245,24 @@ If you prefer, you can use this javascript to embed collapsible window.
     userData.SetProperty<bool>("SentGreeting", true);
     await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
     ```
-4. To retrive context of the conversation, get data. In this example, a typed data.
+
+4. Copy this code and paste inside your if contain greetingsWord. Should be like this:
+
+    ```
+    if (Contain(greetingsWord, activity.Text))
+    {
+        //State
+        StateClient stateClient = activity.GetStateClient();
+        BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+        userData.SetProperty<bool>("SentGreeting", true);
+        await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
+
+        Activity reply = activity.CreateReply("Hello, stranger!");
+        await connector.Conversations.ReplyToActivityAsync(reply);
+    }
+    ```
+
+5. To retrive context of the conversation, get data. In this example, a typed data.
 
     ```
     BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
