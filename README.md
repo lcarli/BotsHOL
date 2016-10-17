@@ -69,22 +69,22 @@ Follow these steps to setup your environment for the demo.
 4. Click in **Register a bot** to register a new bot
 
 5. fulfill all data about your bot.
-    * Name: Displayed in Bot Directory. 35 character limit.
-    * Bot Handle: Used in the URL for your bot. **Alphanumeric and underscore only**. Cannot be changed once registered.
-    * Description: First 46 characters displayed on your bot card in Bot Directory. Full description displayed in bot details.
+    * **Name**: Displayed in Bot Directory. 35 character limit.
+    * **Bot Handle**: Used in the URL for your bot. **Alphanumeric and underscore only**. Cannot be changed once registered.
+    * **Description**: First 46 characters displayed on your bot card in Bot Directory. Full description displayed in bot details.
 
-    * Messaging endpoint: HTTPS Rest endpoint that the bot implements to send and receive messages.
+    * **Messaging endpoint**: HTTPS Rest endpoint that the bot implements to send and receive messages.
         - It will be your webapp previously created plus the route */api/messages/*
-    * Microsoft App ID: Get your Microsoft App ID and password from the Microsoft Application registration portal. Paste the password in your bot configuration file.
+    * **Microsoft App ID**: Get your Microsoft App ID and password from the Microsoft Application registration portal. Paste the password in your bot configuration file.
         > *Note* - You have only one chance to see your Microsoft App Password. Save it in a safety place.
 
-    * Publisher name - Your name or your company name
-    * Publisher Email - Your Email or your commpany email
-    * Privacy statement - If you have one, paste url here. If don't, you can use that -> http://go.microsoft.com/fwlink/?linkid=521839
-    * Terms of Use - If you have one, paste url here. If don't, you can use tour website url
-    * Bot website - Url of your bot previously created
-    * Hashtags - Comma delimited.
-    * Languages - ISO 639-1 format, comma delimited.
-    * Default Conversation Language - The default language to use for new users.(in ISO 639-1 format)
+    * **Publisher name**: Your name or your company name
+    * **Publisher Email**: Your Email or your commpany email
+    * **Privacy statement**: If you have one, paste url here. If don't, you can use that -> http://go.microsoft.com/fwlink/?linkid=521839
+    * **Terms of Use**: If you have one, paste url here. If don't, you can use tour website url
+    * **Bot website**: Url of your bot previously created
+    * **Hashtags**: Comma delimited.
+    * **Languages**: ISO 639-1 format, comma delimited.
+    * **Default Conversation Language**: The default language to use for new users.(in ISO 639-1 format)
 
 6.  Accept Privacy statement, Terms of use, and Code of conduct. and click _Register_
