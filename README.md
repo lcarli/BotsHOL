@@ -140,10 +140,11 @@ Follow these steps to setup your environment for the demo.
     - The call will return a token good for one conversation. If you want to start a new conversation, you must generate a new token.
     - Change the “s=” parameter in your iframe embed to “t=”. The “t=” form works with tokens and automatically renews them before they expire.
 
-> **NOTE**: Note, the above secret is a sample and will not work. Use your own secret.
-'''
+    > **NOTE**: Note, the above secret is a sample and will not work. Use your own secret.
+
+```
 <iframe src="https://webchat.botframework.com/embed/YOUR_BOT_ID?t=YOUR_TOKEN_HERE"></iframe>
-'''
+```
 
 
 <a name="Demo6"></a>
