@@ -14,6 +14,7 @@ In these demos, you will see how to:
 4. [Testing and publishing your bot](#Demo4)
 5. [Embedding a webchat to a website](#Demo5)
 6. [Connecting your bot to a channel - Facebook](#Demo6)
+7. [Working with Bot State](#Demo7)
 
 <a name="setup"></a>
 ### Setup and Configuration ###
@@ -183,3 +184,41 @@ If you prefer, you can use this javascript to embed collapsible window.
 4. That's the end of configuration - your Bot is ready for your users. They will have their own steps to follow to give the Bot permission to participate in their group/channel or get connection details like the SMS phone number or e-mail. They can do this in the Bot Directory page for your Bot. The link to this is at the top of the Bot Details page in the dev portal.
 
 > **Note"": You can follow those steps to add how many channels you want.
+
+
+<a name="Demo7"></a>
+## Demo 7) Working with Bot State
+
+1. Open your bot project.
+2. Inside the POST method, create a new instance of _StateClient_
+    ```
+    StateClient stateClient = activity.GetStateClient();
+    ```
+3. To save context of the conversation, set data. In this example, a typed data.
+    ```
+    BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+    userData.SetProperty<bool>("SentGreeting", true);
+    await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
+    ```
+4. To retrive context of the conversation, get data. In this example, a typed data.
+    ```
+    BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+    if (userData.GetProperty<bool>("SentGreeting"))
+            ... do something ...;
+    ```
+
+> **Speaking Points:** Explain about Get/Set complex data
+    * 
+    ```
+    BotState botState = new BotState(stateClient);
+    BotData botData = new BotData(eTag: "*");
+    botData.SetProperty<BotState>("UserData", myUserData);
+    BotData response = await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, botData);
+    ```
+
+    * 
+    ```
+    MyUserData addedUserData = new MyUserData();
+    BotData botData = await botState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+    myUserData = botData.GetProperty<MyUserData>("UserData");.. do something ...;
+    ```
