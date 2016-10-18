@@ -15,6 +15,7 @@ In these demos, you will see how to:
 5. [Embedding a webchat to a website](#Demo5)
 6. [Connecting your bot to a channel - Facebook](#Demo6)
 7. [Working with Bot State](#Demo7)
+8. [Implement your first dialog](#Demo8)
 
 <a name="setup"></a>
 ### Setup and Configuration ###
@@ -305,4 +306,55 @@ If you prefer, you can use this javascript to embed collapsible window.
     {
         // handle precondition failed error if someone else has modified your object
     }
+    ```
+
+
+<a name="Demo8"></a>
+## Demo 8) Implement your first dialog
+
+1. Open your bot previously created.
+
+2. Delete IF/ELSE method inside Post method. Should be like this:
+
+    ```
+    public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
+    {
+        if (activity.Type == ActivityTypes.Message)
+        {
+            ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+        }
+        else
+        {
+            HandleSystemMessage(activity);
+        }
+        var response = Request.CreateResponse(HttpStatusCode.OK);
+        return response;
+    }
+    ```
+3. Now, create the main dialog you will use. Call it RootDialog.To do that, create a new class inherit from IDialog interface. See the example below:
+
+    ```
+    [Serializable]
+    public class RootDialog : IDialog<object>
+    {
+        public async Task StartAsync(IDialogContext context)
+        {
+            context.Wait(MessageReceivedAsync);
+        }
+
+        public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
+        {
+            var message = await argument;
+            await context.PostAsync("You said: " + message.Text);
+            context.Wait(MessageReceivedAsync);
+        }
+    }
+    ```
+
+4. Fix all erros import the correct libraries
+
+5. Come back to MessagesController.cs and insert under the ConnectorClient the method to send the conversation to your RootDialog:
+
+    ```
+    await Conversation.SendAsync(activity, () => new RootDialog());
     ```
