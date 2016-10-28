@@ -23,6 +23,7 @@ Follow these steps to setup your environment for the demo.
 
 1. Download the [Bot Builder SDK](https://github.com/Microsoft/BotBuilder/tree/master/CSharp)
 2. Download the [template](http://aka.ms/bf-bc-vstemplate) for Visual Studio
+    > Save the zip file to your Visual Studio 2015 templates directory which is traditionally in "%USERPROFILE%\Documents\Visual Studio 2015\Templates\ProjectTemplates\Visual C#\"
 3. Download the [Bot Framework Emulator](https://aka.ms/bf-bc-emulator) for _windows_ or [Bot Framework Emulator console](https://aka.ms/bfemulator) for Mac/Linux
     > **Note** Instructions on how to use the console app on Mac and Linux with Mono, click [here](https://docs.botframework.com/en-us/tools/bot-framework-emulator/#mac-and-linux-support-using-command-line-emulator)
 
@@ -358,3 +359,5 @@ If you prefer, you can use this javascript to embed collapsible window.
     ```
     await Conversation.SendAsync(activity, () => new RootDialog());
     ```
+
+    > **Speaking Points:** Here you have opportunity to explain about main Dialog (or RootDialog).
